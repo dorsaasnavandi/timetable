@@ -1,0 +1,312 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+
+$blue: #31dbcc;
+$white: #ffff;
+$gray: #e0e0e0;
+$gray-2:#474747;
+$gray-3:#565656;
+$gray-4:#D3D3D3;
+$gray-5:#C0C0C0;
+$light-gray: #f7f7f7;
+$dark-blue: #2e3192;
+$black: #383838;
+$light-black:#4f4f4f;
+$select-box:#343434;
+$icon-select:#5d5d5d;
+$shadow:#777;
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+  max-width: 1162px;
+  width:90%;
+  margin: auto;
+}
+.full-screen {
+  width: 100%;
+  height: 452px;
+  background-color: $blue;
+}
+
+.header-table {
+  width: 100%;
+  height:auto;
+  background-color: $blue;
+  padding-top: 180px;
+
+  &__title {
+    width: 100%;
+    height: 50px;
+    padding-top: 15px;
+    margin-bottom: 5px;
+    .text-title {
+      color: $white;
+      font-size: 25px;
+
+    }
+  }
+  .choose-box {
+    position: relative;
+    .header-table__box {
+      width: 100%;
+      height: 50px;
+      background-color: $white;
+      border-radius: 7px;
+      padding: 5px;
+      cursor: pointer;
+
+      .content-box {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        margin-top: 5px;
+        &__txt {
+          font-size: 15px;
+          color: $select-box;
+        }
+        &__icon {
+          margin-left: 10px;
+          font-size: 25px;
+          color:$icon-select;
+        }
+      }
+    }
+  }
+  &__text {
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    color: $gray-2;
+  }
+  .select-items {
+    width: 100%;
+    height: auto;
+    background-color: $white;
+    font-size: 15px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    color: $light-black;
+    box-shadow: 0 10px 6px -6px $shadow;
+    .select-li {
+      padding: 10px;
+      cursor: pointer;
+    }
+    .select-li:hover {
+      background-color: $light-gray;
+      transition: 0.5s;
+    }
+  }
+}
+
+.options {
+  width: 100%;
+  height: 30px;
+  padding-top: 5px;
+  margin-top: 10px;
+  .option-ul {
+    text-align: right;
+    .option-item {
+      display: inline-block !important;
+      cursor: pointer;
+      margin-right: 10px;
+      color:$gray-2;
+      .option-item__icon {
+        margin-right: 5px;
+      }
+    }
+  }
+
+}
+
+.week-box {
+  width: 100%;
+  height: 50px;
+  padding-top: 15px;
+  .week {
+    text-align: center;
+    .day {
+      display: inline-block;
+      margin-right: 0px;
+      padding: 10px 20px;
+      .day__link {
+        text-decoration: none;
+        color: $blue;
+
+        &.day-active{
+          color: $white !important;
+        }
+      }
+
+    }
+    .day:first-child {
+      background-color: $dark-blue;
+      position: relative;
+      border-top-right-radius: 7px;
+      border-top-left-radius: 7px;
+    }
+
+  }
+}
+
+.day:first-child::after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  background-color: $dark-blue;
+  border-top: 1px solid $white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  z-index: 3;
+}
+
+.top-table {
+  width: 100%;
+  height: 15px;
+  background-color: $gray;
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
+  box-sizing: border-box;
+}
+
+.time-day {
+  position: relative;
+  .bottom-table {
+    width: 100%;
+    height: 100px;
+    background-color: $gray;
+    padding: 35px;
+    &__title {
+      font-weight: bold;
+      cursor: pointer;
+      color:$black;
+      .morning-icon {
+        font-size: 20px;
+        margin-right: 7px;
+        color: $gray-3;
+      }
+    }
+
+  }
+  .list-time {
+    width: 100%;
+    height: auto;
+    background-color: $gray-4;
+    font-size: 15px;
+    position: absolute;
+    top:100px;
+    left:0;
+    z-index: 4;
+    cursor: pointer;
+    color:$gray-2;
+    box-shadow: 0 10px 6px -6px $shadow;
+    padding:15px;
+  }
+  .time-item {
+    padding:10px 41px;
+    border-bottom: 1px solid $gray;
+  }
+  .time-item:last-child{
+    border-bottom: 1px solid transparent !important;
+  }
+  .time-item:hover{
+    background-color:  $gray-5;
+    transition: 0.5s;
+  }
+
+}
+
+.items-table {
+  width: 100%;
+  height: 45px;
+  background-color: $white;
+  border-bottom: 1px solid $black;
+  .title-column {
+    width: 100%;
+    height: 45px;
+    padding: 15px;
+    color: $light-black;
+  }
+}
+
+.content-table {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid $gray;
+  .content-column {
+    width: 100%;
+    height:100%;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: $light-black;
+  }
+}
+
+.content-table:nth-child(odd) {
+  background-color: $light-gray;
+}
+
+.content-table:last-child {
+  border: 1px solid transparent;
+  margin-bottom: 100px;
+}
+
+.respons-table {
+  display: none;
+  width: 100%;
+  .respons-table__row{
+     background-color:$light-gray;
+    border-bottom: 1px solid $gray;
+    .items-respons{
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      color: $light-black;
+    }
+  }
+  .respons-table__row:nth-child(odd){
+    background-color: $white;
+  }
+  .respons-table__row:last-child{
+    margin-bottom: 100px;
+  }
+
+}
+
+
+@media all and (max-width: 576px) {
+  .week-box {
+    height: auto;
+  }
+  .day {
+    display: block !important;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media all and (max-width: 768px) {
+  .content-box__icon {
+    margin-left: 20px !important;
+  }
+  .default-table{
+    display: none !important;
+  }
+  .respons-table {
+    display: block;
+  }
+}
+
